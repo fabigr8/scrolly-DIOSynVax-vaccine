@@ -44,7 +44,7 @@ function Footer() {
     <footer className="bg-ink text-cream-200 py-16 px-6">
       <div className="max-w-5xl mx-auto">
         {/* Top grid — 4 cols on lg, 2×2 on md */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
           {/* Brand */}
           <div>
             <div className="flex items-center gap-2 mb-4">
@@ -98,20 +98,7 @@ function Footer() {
             </a>
           </div>
 
-          {/* Tools */}
-          <div>
-            <h4 className="text-xs font-bold tracking-widest uppercase text-ink-faint mb-3">
-              Bioinformatics Tools
-            </h4>
-            <ul className="space-y-1.5">
-              {tools.map((t) => (
-                <li key={t} className="flex items-center gap-2 text-xs text-ink-faint">
-                  <span className="w-1 h-1 rounded-full bg-science-blue flex-shrink-0" />
-                  {t}
-                </li>
-              ))}
-            </ul>
-          </div>
+
         </div>
 
         {/* Bottom bar */}
