@@ -1,0 +1,117 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* ─── Reset & Base ─────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: #F7F4EE;
+  color: #0D1117;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* ─── Selection ────────────────────────────────── */
+::selection {
+  background-color: #1D4ED8;
+  color: #ffffff;
+}
+
+/* ─── Scrollbar ────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #EDE9DF; }
+::-webkit-scrollbar-thumb { background: #94A3B8; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #1D4ED8; }
+
+/* ─── Typography ────────────────────────────────── */
+.font-display {
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+/* ─── Viz Container ─────────────────────────────── */
+.viz-card {
+  background: #FFFFFF;
+  border: 1px solid #EDE9DF;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(13,17,23,0.06), 0 1px 4px rgba(13,17,23,0.04);
+}
+
+/* ─── Glow effects ──────────────────────────────── */
+.glow-blue {
+  filter: drop-shadow(0 0 12px rgba(29, 78, 216, 0.35));
+}
+.glow-teal {
+  filter: drop-shadow(0 0 12px rgba(8, 145, 178, 0.35));
+}
+.glow-red {
+  filter: drop-shadow(0 0 12px rgba(220, 38, 38, 0.35));
+}
+
+/* ─── Section Progress Dots ──────────────────── */
+.progress-dot {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.progress-dot.active {
+  background-color: #1D4ED8;
+  transform: scale(1.4);
+}
+
+/* ─── Animated gradient border ──────────────── */
+@keyframes gradientShift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.gradient-border {
+  background: linear-gradient(135deg, #1D4ED8, #0891B2, #059669, #7C3AED);
+  background-size: 300% 300%;
+  animation: gradientShift 6s ease infinite;
+}
+
+/* ─── Spike protein orbit animation ────────── */
+@keyframes orbit {
+  from { transform: rotate(0deg) translateX(var(--orbit-r)) rotate(0deg); }
+  to   { transform: rotate(360deg) translateX(var(--orbit-r)) rotate(-360deg); }
+}
+
+.spike-protein {
+  animation: orbit var(--orbit-duration, 8s) linear infinite;
+}
+
+/* ─── Number counter animation ──────────────── */
+@keyframes countUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ─── Bar fill animation ─────────────────────── */
+@keyframes fillRight {
+  from { width: 0%; }
+  to   { width: var(--target-width); }
+}
+
+/* ─── Float animation ────────────────────────── */
+@keyframes floatY {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-10px); }
+}
+
+.float-anim { animation: floatY 4s ease-in-out infinite; }
+
+/* ─── Responsive helpers ─────────────────────── */
+@media (max-width: 768px) {
+  .sticky-panel {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    height: 42vh;
+  }
+}
