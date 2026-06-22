@@ -119,7 +119,7 @@ export default function Hero() {
           <span className="text-ink-faint text-xs">·</span>
           <span className="inline-flex items-center gap-1.5 text-xs font-semibold tracking-widest uppercase text-science-amber">
             <span className="inline-block w-2 h-2 rounded-full bg-science-amber" />
-            Phase I Trial · Journal of Infection · 2026
+            Journal of Infection · 2026
           </span>
         </motion.div>
 
@@ -157,15 +157,22 @@ export default function Hero() {
         {/* Scroll prompt */}
         <motion.div
           variants={itemVariants}
-          className="flex flex-col items-center gap-2 text-ink-muted"
+          className="flex flex-col items-center gap-3"
         >
-          <span className="text-xs font-medium tracking-widest uppercase">Scroll to explore</span>
+          <motion.span
+            className="text-sm font-semibold tracking-widest uppercase px-5 py-2 rounded-full border border-ink-faint text-ink-soft"
+            animate={{ opacity: [0.6, 1, 0.6] }}
+            transition={{ duration: 2.4, repeat: Infinity, ease: 'easeInOut' }}
+          >
+            Scroll to explore
+          </motion.span>
           <motion.div
             animate={{ y: [0, 8, 0] }}
             transition={{ duration: 1.6, repeat: Infinity, ease: 'easeInOut' }}
+            className="text-ink-muted"
           >
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-              <path d="M10 4v12M4 10l6 6 6-6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+            <svg width="22" height="22" viewBox="0 0 20 20" fill="none">
+              <path d="M10 4v12M4 10l6 6 6-6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
           </motion.div>
         </motion.div>

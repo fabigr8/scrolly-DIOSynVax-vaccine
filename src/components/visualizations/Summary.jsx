@@ -63,10 +63,6 @@ export default function Summary() {
               transition={{ delay: 0.5 + i * 0.08, duration: 0.4 }}
               className="flex items-center gap-2.5"
             >
-              {/* Connector line */}
-              {i > 0 && (
-                <div className="absolute ml-[14px]" style={{ marginTop: '-8px', height: '8px', width: '1px', background: '#E2E8F0' }} />
-              )}
               {/* Step node */}
               <div
                 className="w-7 h-7 rounded-full flex items-center justify-center text-white text-xs font-bold flex-shrink-0"
