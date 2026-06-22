@@ -109,8 +109,8 @@ function Footer() {
             representative medians consistent with described statistical significance (all p ≤ 0.0002).
           </p>
           <div className="flex items-center gap-2 flex-shrink-0">
-            <span className="inline-block w-1.5 h-1.5 rounded-full bg-science-amber" />
-            <span className="text-xs text-ink-faint">Phase I results published — Munro et al. 2026</span>
+            {/*<span className="inline-block w-1.5 h-1.5 rounded-full bg-science-amber" />
+            <span className="text-xs text-ink-faint">Phase I results published — Munro et al. 2026</span> */}
           </div>
         </div>
       </div>
