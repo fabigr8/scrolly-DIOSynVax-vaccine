@@ -150,8 +150,8 @@ export default function Hero() {
 
         {/* Author / source lines */}
         <motion.div variants={itemVariants} className="flex flex-col items-center gap-1 text-xs text-ink-faint mb-12">
-          <span>Vishwanath et al. · University of Cambridge · DIOSynVax Ltd. · Insilico Design — <em>Nat. Biomed. Eng.</em> 2023</span>
-          <span>Munro et al. · University of Cambridge · DIOSynVax Ltd. · Phase I Clinical Trial Results — <em>Journal of Infection</em> 2026</span>
+          <span>Insilico Design · Vishwanath et al. · 2023  · <em>Nat. Biomed. Eng.</em></span>
+          <span>Phase I Clinical Trial Results · Munro et al. · 2026 · <em>Journal of Infection</em></span>
         </motion.div>
 
         {/* Scroll prompt */}

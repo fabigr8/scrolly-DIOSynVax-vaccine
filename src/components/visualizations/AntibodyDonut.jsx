@@ -120,7 +120,7 @@ export default function AntibodyDonut() {
 
       {/* Source note */}
       <p className="text-xs text-ink-faint text-center px-6 max-w-xs">
-        Source: Voss et al., Science 2021 — cited in paper Discussion.
+        Original Source: Voss et al., Science 2021 - See Primary papers.
       </p>
     </div>
   );

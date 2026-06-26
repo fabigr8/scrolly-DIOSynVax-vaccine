@@ -261,8 +261,8 @@ export const STORY_SECTIONS = [
     title: 'The 84% Distraction',
     subtitle: 'Current vaccines aren\'t focused where it matters',
     body: [
-      'All current COVID-19 vaccines — Pfizer, Moderna, AstraZeneca — use the full-length spike protein as their target. But this is surprisingly wasteful from an immunological perspective.',
-      'Of all the antibodies your immune system generates against the spike protein, only **16%** actually target the Receptor Binding Domain — the part that physically docks onto human cells. The other **84%** attack variable regions that mutate away with each new variant.',
+      'All current COVID-19 vaccines — Pfizer, Moderna, AstraZeneca — use **the full-length spike protein** as their target. But this is surprisingly wasteful from an immunological perspective.',
+      'Of all the antibodies your immune system generates against the spike protein, only **16%** actually target the **Receptor Binding Domain** — the part that physically docks onto human cells. The other **84%** attack variable regions that mutate away with each new variant.',
       'This immunodominance problem means most of your vaccine-induced antibodies become less useful over time, while the virus keeps evolving to escape the 16% that matter.',
     ],
     vizKey: 'antibodyDonut',
@@ -277,7 +277,7 @@ export const STORY_SECTIONS = [
     title: 'The Spike\'s Achilles Heel',
     subtitle: 'Why the RBD is the only target that matters',
     body: [
-      'The Receptor Binding Domain (RBD) is a small region on the spike protein\'s tip. It is the physical key that unlocks human cells — it binds to ACE2, a protein found on the surface of cells throughout your lungs, heart, and blood vessels.',
+      'The **Receptor Binding Domain (RBD)** is a small region on the spike protein\'s tip. It is the physical key that unlocks human cells — it binds to ACE2, a protein found on the surface of cells throughout your lungs, heart, and blood vessels.',
       'Because the RBD is what docks onto ACE2, antibodies that coat the RBD can physically block receptor engagement and stop infection outright — before the virus ever enters a cell.',
       'The critical insight: within the RBD, some patches are *conserved* — they barely change between variants because changing them would break the virus\'s ability to infect. These conserved patches are the ideal antibody targets.',
     ],
@@ -343,7 +343,7 @@ export const STORY_SECTIONS = [
     body: [
       'The animal studies made a compelling case: T2_17 was an efficacious single antigen covering SARS-CoV-1, SARS-CoV-2, RaTG13, WIV16 and the SARS-CoV-2 variants Alpha, Beta, Gamma, Delta and Omicron BA.1 — all with the same antigen.',
       'The design predated the emergence of these variants. None of their sequences were included in the initial design. That the vaccine neutralized them anyway is strong validation of the DIOSynVax evolutionary approach.',
-      'The deeper significance: the *pipeline* itself is generalizable. Build from the family tree, mask the variable regions, focus the immune response on conserved cores — this logic could be applied to influenza, HIV, RSV, or any pathogen with dangerous variant diversity.',
+      '**The deeper significance:** the **pipeline** itself is generalizable. Build from the family tree, mask the variable regions, focus the immune response on conserved cores — this logic could be applied to influenza, HIV, RSV, or any pathogen with dangerous variant diversity.',
     ],
     vizKey: 'summary',
     callout: null,

@@ -43,19 +43,35 @@ function Footer() {
   return (
     <footer className="bg-ink text-cream-200 py-16 px-6">
       <div className="max-w-5xl mx-auto">
-        {/* Top grid — 4 cols on lg, 2×2 on md */}
+        {/* Top grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-          {/* Brand */}
-          <div>
-            <div className="flex items-center gap-2 mb-4">
-              <div className="w-7 h-7 rounded-full" style={{ background: 'linear-gradient(135deg, #1D4ED8, #0891B2, #059669)' }} />
-              <span className="font-display font-bold text-white text-lg">DIOSynVax</span>
-            </div>
-            <p className="text-xs text-ink-faint leading-relaxed">
-              Digitally Immune-Optimized Synthetic Vaccine technology —
-              a Cambridge University approach to building next-generation
-              pan-pathogen antigens from evolutionary first principles.
-            </p>
+          {/* Institutions */}
+          <div className="lg:col-span-1">
+            <h4 className="text-xs font-bold tracking-widest uppercase text-ink-faint mb-3">
+              Participating Institutions
+            </h4>
+            <ul className="text-xs text-ink-faint leading-relaxed space-y-1">
+              {[
+                'University of Regensburg, Germany',
+                'University Hospital Regensburg, Germany',
+                'University of Cambridge, UK',
+                'Cambridge University Hospitals NHS, UK',
+                'University of Southampton, UK',
+                'University Hospital Southampton NHS, UK',
+                'Imperial College London, UK',
+                'London School of Hygiene & Tropical Medicine, UK',
+                'DIOSynVax Ltd, Cambridge, UK',
+                'PHARMExcel Ltd, Welwyn Garden City, UK',
+                'ProBioGen AG, Berlin, Germany',
+                'Ethris GmbH, Planegg, Germany',
+                'Microsoft Health Futures, Redmond, WA, USA',
+              ].map((inst) => (
+                <li key={inst} className="flex items-start gap-1.5">
+                  <span className="mt-1 w-1 h-1 rounded-full bg-science-teal flex-shrink-0" />
+                  {inst}
+                </li>
+              ))}
+            </ul>
           </div>
 
           {/* Paper 1 */}

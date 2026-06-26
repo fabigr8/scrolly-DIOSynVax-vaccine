@@ -13,7 +13,7 @@ export default function Summary() {
     <div className="w-full h-full flex flex-col items-center justify-center gap-5 px-4 overflow-y-auto py-4">
       <div className="text-center">
         <h3 className="font-display text-xl font-bold text-ink mb-1">
-          The DIOSynVax Pipeline
+          The Research Pipeline
         </h3>
         <p className="text-xs text-ink-muted">
           A generalizable approach for any virus family with dangerous variant diversity
