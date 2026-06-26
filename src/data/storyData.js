@@ -8,6 +8,8 @@
  * ─────────────────────────────────────────────────────────────────────────────
  */
 
+import sarsCoV2StructureImg from '../assets/SarsCoV2-struc.png';
+
 // ─── Color palette ────────────────────────────────────────────────────────────
 export const PALETTE = {
   blue:    '#1D4ED8',
@@ -285,6 +287,10 @@ export const STORY_SECTIONS = [
     callout: {
       value: '3',
       label: 'Distinct epitope regions identified on the RBD surface',
+    },
+    popupImage: {
+      src: sarsCoV2StructureImg,
+      caption: 'SARS-CoV-2 Exploded View — Structural proteins embedded in the viral lipid membrane',
     },
   },
   {

@@ -83,15 +83,25 @@ function Footer() {
               "A computationally designed antigen eliciting broad humoral
               responses against SARS-CoV-2 and related sarbecoviruses"
             </p>
-            <div className="text-xs text-ink-faint mb-1">Vishwanath et al. · University of Cambridge</div>
+            <div className="text-xs text-ink-faint mb-1">Vishwanath et al. · 2023</div>
             <a
               href="https://www.nature.com/articles/s41551-023-01094-2"
               target="_blank"
               rel="noopener noreferrer"
               className="text-xs text-science-teal hover:text-white transition-colors underline underline-offset-2"
             >
-              Nature Biomedical Engineering, published online Sept. 2023
+              Nature Biomedical Engineering, 2023
             </a>
+            <p className="text-xs text-ink-faint mt-2">
+              DOI: <a
+                href="https://doi.org/10.1038/s41551-023-01094-2"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xs text-science-teal hover:text-white transition-colors underline underline-offset-2"
+              >
+                10.1038/s41551-023-01094-2
+              </a>
+            </p>
           </div>
 
           {/* Paper 2 */}
@@ -103,7 +113,7 @@ function Footer() {
               "A phase I, needle free, dose escalation clinical trial of
               pEVAC-PS, a candidate pan-Sarbecovirus Vaccine"
             </p>
-            <div className="text-xs text-ink-faint mb-1">Munro et al. · Journal of Infection</div>
+            <div className="text-xs text-ink-faint mb-1">Munro et al. · 2026</div>
             <a
               href="https://www.sciencedirect.com/science/article/pii/S0163445326000848"
               target="_blank"
@@ -112,9 +122,17 @@ function Footer() {
             >
               Journal of Infection, 2026
             </a>
+            <p className="text-xs text-ink-faint mt-2">
+              DOI: <a
+                href="https://doi.org/10.1016/j.jinf.2026.03.012"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xs text-science-amber hover:text-white transition-colors underline underline-offset-2"
+              >
+                10.1016/j.jinf.2026.03.012
+              </a>
+            </p>
           </div>
-
-
         </div>
 
         {/* Bottom bar */}

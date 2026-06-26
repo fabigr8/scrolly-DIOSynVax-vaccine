@@ -1,5 +1,5 @@
-import { useRef } from 'react';
-import { motion } from 'framer-motion';
+import { useRef, useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const parseMarkdown = (text) =>
   text.split(/(\*\*[^*]+\*\*)/).map((part, i) => {
@@ -15,6 +15,7 @@ const parseMarkdown = (text) =>
 
 export default function SectionText({ section, isActive, registerRef }) {
   const ref = useRef(null);
+  const [imgOpen, setImgOpen] = useState(false);
 
   const setRef = (node) => {
     ref.current = node;
@@ -82,7 +83,74 @@ export default function SectionText({ section, isActive, registerRef }) {
             </div>
           </motion.div>
         )}
+
+        {/* Popup image trigger */}
+        {section.popupImage && (
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.45 }}
+            className="mt-6"
+          >
+            <button
+              onClick={() => setImgOpen(true)}
+              className="inline-flex items-center gap-2 px-5 py-3 rounded-xl border border-blue-200 bg-white hover:bg-blue-50 hover:border-blue-400 transition-all duration-200 text-sm font-semibold text-science-blue shadow-sm group"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 flex-shrink-0 transition-transform duration-200 group-hover:scale-110" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M4 8V6a2 2 0 012-2h2M4 16v2a2 2 0 002 2h2m8-16h2a2 2 0 012 2v2m0 8v2a2 2 0 01-2 2h-2M9 12l2 2 4-4" />
+              </svg>
+              View Virus Structure Diagram
+            </button>
+          </motion.div>
+        )}
       </motion.div>
+
+      {/* Lightbox modal */}
+      <AnimatePresence>
+        {imgOpen && section.popupImage && (
+          <motion.div
+            key="lightbox-overlay"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.25 }}
+            className="fixed inset-0 z-50 flex items-center justify-center p-4 md:p-8"
+            style={{ background: 'rgba(13,17,23,0.85)', backdropFilter: 'blur(6px)' }}
+            onClick={() => setImgOpen(false)}
+          >
+            <motion.div
+              key="lightbox-panel"
+              initial={{ opacity: 0, scale: 0.92, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.92, y: 20 }}
+              transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+              className="relative max-w-6xl w-full rounded-2xl overflow-hidden shadow-2xl"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <img
+                src={section.popupImage.src}
+                alt={section.popupImage.caption}
+                className="w-full h-auto block"
+              />
+              {section.popupImage.caption && (
+                <div className="absolute bottom-0 inset-x-0 px-5 py-3 bg-gradient-to-t from-black/70 to-transparent">
+                  <p className="text-xs text-white/80 leading-snug">{section.popupImage.caption}</p>
+                </div>
+              )}
+              <button
+                onClick={() => setImgOpen(false)}
+                aria-label="Close diagram"
+                className="absolute top-3 right-3 w-8 h-8 flex items-center justify-center rounded-full bg-black/50 hover:bg-black/75 text-white transition-colors duration-150"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }
